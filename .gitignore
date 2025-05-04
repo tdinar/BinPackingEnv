@@ -1,0 +1,35 @@
+.gitignore:
+
+# Build folders
+build/
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CMakeCache.txt
+
+# Compiled files
+*.o
+*.so
+*.a
+*.pyc
+__pycache__/
+
+# Python virtual environments
+venv/
+.env/
+
+# MacOS system files
+.DS_Store
+
+# Logs and test outputs
+*.log
+*.out
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# Third-party dependencies (not tracked in Git)
+external/
+
+---
