@@ -1,6 +1,9 @@
 #pragma once
-
+#include <vector>
+#include <memory>
 #include "PxPhysicsAPI.h"
+
+#include "Box.h"
 
 enum class SimMode {
     MODE_2D,
@@ -15,10 +18,15 @@ public:
     void reset();
     void step();
     int get_state() const;
+    void addBox(float w, float h);
+    size_t getBoxCount() const; 
+
+
 
 private:
     SimMode mMode;
     int state_;
+    std::vector<std::unique_ptr<Box>> mBoxes;
 
     physx::PxDefaultAllocator mAllocator;
     physx::PxDefaultErrorCallback mErrorCallback;

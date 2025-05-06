@@ -42,3 +42,10 @@ void BinPackingEnv::step() {
 int BinPackingEnv::get_state() const {
     return state_;
 }
+
+void BinPackingEnv::addBox(float w, float h) {
+    mBoxes.push_back(std::make_unique<Box>(mPhysics, mMaterial, 0.0f, 0.0f, w, h)); // dummy position
+}
+size_t BinPackingEnv::getBoxCount() const {
+    return mBoxes.size();
+}

@@ -29,7 +29,7 @@ add_subdirectory(external/pybind11)
 add_subdirectory(external/googletest)
 
 # Add library for BinPackingEnv
-add_library(binpacking_env src/BinPackingEnv.cpp)
+add_library(binpacking_env src/BinPackingEnv.cpp src/Box.cpp)
 
 # Link PhysX libraries
 target_link_libraries(binpacking_env
@@ -44,7 +44,7 @@ target_link_libraries(binpacking_env
 
 # Tests
 enable_testing()
-add_executable(run_tests tests/test_BinPackingEnv.cpp)
+add_executable(run_tests tests/test_BinPackingEnv.cpp tests/test_box.cpp tests/test_add_box.cpp)
 target_link_libraries(run_tests PRIVATE binpacking_env gtest gtest_main)
 add_test(NAME BinPackingTests COMMAND run_tests)
 
